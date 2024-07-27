@@ -77,19 +77,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or feedback, contact [your email](ameymanuel@gmail.com).
-
-```
-
-### Key Sections:
-1. **Overview:** Briefly describes the purpose and functionality of the project.
-2. **Features:** Lists the main features of the project.
-3. **Dependencies:** Lists any required libraries or tools.
-4. **Installation:** Provides steps to clone, build, and include dependencies.
-5. **Usage:** Instructions for preparing data and running the application.
-6. **Customization:** Guides on how to adjust the application for specific needs.
-7. **Troubleshooting:** Common issues and solutions.
-8. **Contributing:** Guidelines for contributing to the project.
-9. **License and Contact:** Licensing information and how to reach out.
-
-Feel free to adjust any sections to better fit your project's specifics or add any additional information you think might be useful!
+For questions or feedback, contact [ameymanuel@gmail.com].
