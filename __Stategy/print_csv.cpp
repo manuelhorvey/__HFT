@@ -34,7 +34,7 @@ std::vector<std::string> parseCSVLine(const std::string& line) {
             field += delimiter;
         }
     }
-    fields.push_back(trim(field)); // Add the last field
+    fields.push_back(trim(field));
 
     return fields;
 }

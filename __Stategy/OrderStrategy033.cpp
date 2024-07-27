@@ -27,6 +27,7 @@ bool OrderStrategy033::isValidQuote(const QuoteEvent& qe) const {
 }
 
 void OrderStrategy033::handle(const QuoteEvent& qe, OrderVectors& orders) {
+    //check the new quote and update the cache quote
     if (!_initialized) return;
     if (qe.getVenue() != _pricingVenue) return;
 

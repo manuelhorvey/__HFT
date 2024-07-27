@@ -156,7 +156,7 @@ void processCSV(const std::string& filePath) {
                 quoteEvent.setPrice(price);
                 quoteEvent.setBid(SimplePrice(open));
                 quoteEvent.setAsk(SimplePrice(high));
-                quoteEvent.setVenue(pricingVenue); // Using the existing venue instance
+                quoteEvent.setVenue(pricingVenue);
 
                 // Validate and handle the quote
                 if (strategy.isValidQuote(quoteEvent)) {
