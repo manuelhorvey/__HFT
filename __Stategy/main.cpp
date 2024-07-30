@@ -82,13 +82,13 @@ double correctPrice(const std::string& priceStr) {
 // Function to convert a cleaned string to double
 double toDouble(const std::string& str) {
     if (str.empty()) {
-        return 0.0; // Handle empty fields gracefully
+        return 0.0; 
     }
     try {
         return std::stod(str);
     } catch (const std::exception& e) {
         std::cerr << "Error converting string to double: " << str << " - " << e.what() << std::endl;
-        return 0.0; // Return a default value or handle error appropriately
+        return 0.0;
     }
 }
 
@@ -110,11 +110,11 @@ void processCSV(const std::string& filePath) {
 
     std::vector<std::string> lines;
     std::string line;
-    bool isFirstRow = true; // Flag to skip header row
+    bool isFirstRow = true; 
 
     while (std::getline(file, line)) {
         if (isFirstRow) {
-            isFirstRow = false; // Skip the header row
+            isFirstRow = false; 
             continue;
         }
         lines.push_back(line);
@@ -131,29 +131,29 @@ void processCSV(const std::string& filePath) {
         }
         std::cout << std::endl;
 
-        if (row.size() >= 7) { // Ensure there are enough columns
+        if (row.size() >= 7) { 
             try {
                 // Clean and convert each field
                 std::string date = cleanField(row[0]);
-                double price = correctPrice(cleanField(row[1]));
-                double open = correctPrice(cleanField(row[2]));
-                double high = correctPrice(cleanField(row[3]));
-                double low = correctPrice(cleanField(row[4]));
-                double volume = correctPrice(cleanField(row[5]));
-                std::string changePercent = cleanField(row[6]);
+                double open = correctPrice(cleanField(row[1]));
+                double high = correctPrice(cleanField(row[2]));
+                double low = correctPrice(cleanField(row[3]));
+                double close = correctPrice(cleanField(row[4]));
+                double changePips = toDouble(cleanField(row[5]));
+                double changePercent = toDouble(cleanField(row[6]));
 
                 // Debug output
                 std::cout << "Processed row - Date: " << date
-                          << ", Price: " << price
                           << ", Open: " << open
                           << ", High: " << high
                           << ", Low: " << low
-                          << ", Volume: " << volume
+                          << ", Close: " << close
+                          << ", Change Pips: " << changePips
                           << ", Change %: " << changePercent << std::endl;
 
                 // Create a QuoteEvent from the CSV data
                 QuoteEvent quoteEvent;
-                quoteEvent.setPrice(price);
+                quoteEvent.setPrice(open);
                 quoteEvent.setBid(SimplePrice(open));
                 quoteEvent.setAsk(SimplePrice(high));
                 quoteEvent.setVenue(pricingVenue);
@@ -184,7 +184,7 @@ void processCSV(const std::string& filePath) {
 }
 
 int main() {
-    std::string filePath = "XAU_USD_Historical_Data.csv";
+    std::string filePath = "./Data/XAUUSD_historical_data.csv";
     processCSV(filePath);
     return 0;
 }

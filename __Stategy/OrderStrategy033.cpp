@@ -5,7 +5,7 @@
 
 bool OrderStrategy033::isValidQuote(const QuoteEvent& qe) const {
     const double MIN_PRICE = 0.01;
-    const double MAX_PRICE = 10000.0;
+    const double MAX_PRICE = 100000.0;
 
     double price = qe.getPrice();
     if (price <= MIN_PRICE || price > MAX_PRICE) {

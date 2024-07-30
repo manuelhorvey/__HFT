@@ -13,7 +13,7 @@ public:
     double getPrice() const;
 
 private:
-    double _price; // Example data member to hold price
+    double _price;
 };
 
 #endif // SIMPLE_PRICE_H
