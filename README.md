@@ -20,8 +20,8 @@ The CSV Quote Processor is a C++ application designed to parse and process histo
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/csv-quote-processor.git
-   cd csv-quote-processor
+   [git clone https://github.com/manuelhorvey/__HFT.git]
+   cd __HFT
    ```
 
 2. **Build the Project:**
@@ -29,7 +29,7 @@ The CSV Quote Processor is a C++ application designed to parse and process histo
    Ensure you have a C++ compiler installed (e.g., `g++`).
 
    ```bash
-   g++ -o csv_quote_processor main.cpp
+   g++ -o main.cpp
    ```
 
    Replace `main.cpp` with the name of your source file if it's different.
@@ -47,7 +47,7 @@ The CSV Quote Processor is a C++ application designed to parse and process histo
 2. **Run the Application:**
 
    ```bash
-   ./csv_quote_processor
+   ./main
    ```
 
    By default, the application will process the file named `XAU_USD_Historical_Data.csv`. To use a different file, modify the `filePath` variable in the `main` function of `main.cpp`.
